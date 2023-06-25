@@ -4,6 +4,7 @@ using Route.Models;
 
 namespace Route.Controllers;
 
+[Route("[controller]/[action]")]
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
@@ -13,15 +14,20 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+    /// <summary>
+    /// /Home/Index
+    /// /Home/Index/custom-route
+    ///</summary>
     [Route("")]
-    [Route("[controller]")]
-    [Route("[controller]/[action]")]
-    [Route("custom-route")]
+    [Route("custom-route")] 
     public IActionResult Index()
     {
         return View();
     }
 
+    /// <summary>
+    /// /Home/Privacy
+    /// </summary>
     public IActionResult Privacy()
     {
         return View();
