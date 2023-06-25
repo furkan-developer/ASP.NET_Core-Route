@@ -13,6 +13,10 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+    [Route("")]
+    [Route("[controller]")]
+    [Route("[controller]/[action]")]
+    [Route("custom-route")]
     public IActionResult Index()
     {
         return View();
